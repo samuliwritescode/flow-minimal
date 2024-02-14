@@ -5,7 +5,7 @@ import com.vaadin.flow.router.Route;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@Route("") // <-- Vaadin will make this to be displayed at root of http://localhost:8080/
+@Route("") // <-- Vaadin will make instance of this class to be displayed at root of http://localhost:8080/
 public class MainRoute extends Div {
     public MainRoute() {
         add("Hello world");

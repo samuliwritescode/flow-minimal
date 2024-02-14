@@ -12,15 +12,17 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <vaadin.version>24.2.1</vaadin.version>
+        <vaadin.version>24.3.5</vaadin.version>
     </properties>
 
+    <!-- Spring boot starter will provide you dependency and plugin management -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.0</version>
+        <version>3.2.2</version>
     </parent>
 
+    <!-- Vaadin bill of materials will provide you dependency management for Vaadin parts -->
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -33,6 +35,7 @@
         </dependencies>
     </dependencyManagement>
 
+    <!-- You need only these 2 direct deps to run Vaadin + Spring Boot -->
     <dependencies>
         <dependency>
             <groupId>com.vaadin</groupId>
@@ -46,10 +49,13 @@
 
     <build>
         <plugins>
+            <!-- Spring boot maven plugin is necessary for running the application as JAR file -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+
+            <!-- Vaadin maven plugin is necessary to generate frontend files on fly -->
             <plugin>
                 <groupId>com.vaadin</groupId>
                 <artifactId>vaadin-maven-plugin</artifactId>
